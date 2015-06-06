@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <dimen name="horizontal_margin">16dp</dimen>
+  <dimen name="digit_button_text_size">22sp</dimen>
+  <dimen name="output_elevation">4dp</dimen>
+</resources>

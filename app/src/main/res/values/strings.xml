@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Converter</string>
+
+  <string name="from">From</string>
+  <string name="to">To</string>
+  <string name="swap_units">Swap units</string>
+
+  <!-- 0 unit value, 1 unit name -->
+  <string name="from_value_content_description">From: %1$s %2$s.</string>
+  <!-- 0 unit value, 1 unit name -->
+  <string name="to_value_content_description">To: %1$s %2$s.</string>
+
+  <string name="temperature">Temperature</string>
+  <string name="mass">Weight/Mass</string>
+  <string name="volume">Volume</string>
+  <string name="energy">Energy</string>
+  <string name="length">Length</string>
+  <string name="miles">miles</string>
+  <string name="kilometres">kilometres</string>
+  <string name="metres">metres</string>
+  <string name="centimetres">centimetres</string>
+  <string name="inches">inches</string>
+  <string name="feet">feet</string>
+  <string name="yards">yards</string>
+  <string name="grams">grams</string>
+  <string name="kilograms">kilograms</string>
+  <string name="ounces">ounces</string>
+  <string name="stone">stone</string>
+  <string name="pounds">pounds</string>
+  <string name="celsius">celsius</string>
+  <string name="fahrenheit">fahrenheit</string>
+  <string name="litres">litres</string>
+  <string name="millilitres">millilitres</string>
+  <string name="fluid_ounces">fl. ounces</string>
+  <string name="cups">cups</string>
+  <string name="pints">pints</string>
+  <string name="gallons">gallons</string>
+  <string name="kilocalories">Calories</string>
+  <string name="kilojoules">kilojoules</string>
+
+  <string name="key_0">0</string>
+  <string name="key_1">1</string>
+  <string name="key_2">2</string>
+  <string name="key_3">3</string>
+  <string name="key_4">4</string>
+  <string name="key_5">5</string>
+  <string name="key_6">6</string>
+  <string name="key_7">7</string>
+  <string name="key_8">8</string>
+  <string name="key_9">9</string>
+  <string name="key_dec_description">decimal point</string>
+  <string name="key_clr">C</string>
+  <string name="key_clr_description">clear</string>
+</resources>

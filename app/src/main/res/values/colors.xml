@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="converterListTextColor">#FFFFFFFF</color>
+
+  <color name="textSecondaryLightTheme">#36000000</color>
+  <color name="textPrimaryLightTheme">#57000000</color>
+  <color name="textSecondaryDarkTheme">#96FFFFFF</color>
+  <color name="textPrimaryDarkTheme">#FFFFFF</color>
+
+  <color name="lengthPrimary">#8BC34A</color>
+  <color name="lengthPrimaryDark">#689F38</color>
+  <color name="lengthKeypadBackground">#DCEDC8</color>
+  <color name="lengthKeypadText">#212121</color>
+
+  <color name="temperaturePrimary">#F44336</color>
+  <color name="temperaturePrimaryDark">#D32F2F</color>
+  <color name="temperatureKeypadBackground">#FFCDD2</color>
+  <color name="temperatureKeypadText">#FFFFFF</color>
+
+  <color name="massPrimary">#795548</color>
+  <color name="massPrimaryDark">#5D4037</color>
+  <color name="massKeypadBackground">#D7CCC8</color>
+  <color name="massKeypadText">#FFFFFF</color>
+
+  <color name="volumePrimary">#3F51B5</color>
+  <color name="volumePrimaryDark">#303F9F</color>
+  <color name="volumeKeypadBackground">#C5CAE9</color>
+  <color name="volumeKeypadText">#FFFFFF</color>
+
+  <color name="energyPrimary">#00BCD4</color>
+  <color name="energyPrimaryDark">#0097A7</color>
+  <color name="energyKeypadBackground">#B2EBF2</color>
+  <color name="energyKeypadText">#FFFFFF</color>
+</resources>

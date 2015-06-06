@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginTop="16dp"
+    android:layout_marginBottom="16dp"
+    >
+
+  <ImageButton
+      android:layout_centerHorizontal="true"
+      android:id="@+id/button_switch"
+      android:src="@drawable/ic_swap_vert_grey600_48dp"
+      android:layout_width="48dp"
+      android:layout_height="48dp"
+      android:layout_centerVertical="true"
+      android:background="?android:selectableItemBackground"
+      android:layout_margin="0dp"
+      android:contentDescription="@string/swap_units"
+      />
+
+  <View
+      android:id="@+id/start_divider"
+      android:layout_height="1dp"
+      android:background="#E0E0E0"
+      android:layout_width="0dp"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"
+      android:layout_toLeftOf="@id/button_switch"
+      android:importantForAccessibility="no"
+      tools:ignore="RtlHardcoded,UnusedAttribute"
+      />
+
+  <View
+      android:layout_height="1dp"
+      android:background="#E0E0E0"
+      android:layout_width="0dp"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"
+      android:layout_toRightOf="@id/button_switch"
+      android:importantForAccessibility="no"
+      tools:ignore="RtlHardcoded,UnusedAttribute"
+      />
+
+  <TextView
+      android:id="@+id/text_from_caption"
+      android:text="@string/from"
+      android:importantForAccessibility="no"
+      android:labelFor="@+id/spinner_from_unit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textAllCaps="true"
+      android:layout_toLeftOf="@id/button_switch"
+      android:layout_alignTop="@id/button_switch"
+      android:singleLine="true"
+      android:paddingRight="@dimen/horizontal_margin"
+      android:paddingLeft="0dp"
+      style="@style/Caption"
+      tools:ignore="RtlHardcoded,UnusedAttribute"
+      />
+
+  <TextView
+      android:id="@+id/text_to_caption"
+      android:text="@string/to"
+      android:importantForAccessibility="no"
+      android:labelFor="@+id/spinner_to_unit"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:textAllCaps="true"
+      android:layout_toLeftOf="@id/button_switch"
+      android:layout_alignBottom="@id/button_switch"
+      android:singleLine="true"
+      android:paddingRight="@dimen/horizontal_margin"
+      android:paddingLeft="0dp"
+      style="@style/Caption"
+      tools:ignore="RtlHardcoded,UnusedAttribute"
+      />
+
+</RelativeLayout>

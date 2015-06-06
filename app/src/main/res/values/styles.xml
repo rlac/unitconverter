@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="BaseTheme"
+      parent="Theme.AppCompat.Light.NoActionBar">
+  </style>
+
+  <style name="AppTheme"
+      parent="BaseTheme">
+    <item name="digitCellStyle">@style/DigitCell</item>
+    <item name="android:textColorSecondary">@color/textSecondaryLightTheme</item>
+    <item name="android:textColorPrimary">@color/textPrimaryLightTheme</item>
+  </style>
+
+  <style name="TabBarTheme"
+      parent="AppTheme">
+    <item name="android:textColorSecondary">@color/textSecondaryDarkTheme</item>
+    <item name="android:textColorPrimary">@color/textPrimaryDarkTheme</item>
+  </style>
+
+  <style name="TemperatureTheme">
+    <item name="keypadBackgroundColor">@color/temperatureKeypadBackground</item>
+    <item name="keypadTextColor">@color/temperatureKeypadText</item>
+    <item name="colorPrimary">@color/temperaturePrimary</item>
+    <item name="colorPrimaryDark">@color/temperaturePrimaryDark</item>
+  </style>
+
+  <style name="LengthTheme"
+      parent="AppTheme">
+    <item name="keypadBackgroundColor">@color/lengthKeypadBackground</item>
+    <item name="keypadTextColor">@color/lengthKeypadText</item>
+    <item name="colorPrimary">@color/lengthPrimary</item>
+    <item name="colorPrimaryDark">@color/lengthPrimaryDark</item>
+  </style>
+
+  <style name="MassTheme"
+      parent="AppTheme">
+    <item name="keypadBackgroundColor">@color/massKeypadBackground</item>
+    <item name="keypadTextColor">@color/massKeypadText</item>
+    <item name="colorPrimary">@color/massPrimary</item>
+    <item name="colorPrimaryDark">@color/massPrimaryDark</item>
+  </style>
+
+  <style name="VolumeTheme">
+    <item name="keypadBackgroundColor">@color/volumeKeypadBackground</item>
+    <item name="keypadTextColor">@color/volumeKeypadText</item>
+    <item name="colorPrimary">@color/volumePrimary</item>
+    <item name="colorPrimaryDark">@color/volumePrimaryDark</item>
+  </style>
+
+  <style name="EnergyTheme">
+    <item name="keypadBackgroundColor">@color/energyKeypadBackground</item>
+    <item name="keypadTextColor">@color/energyKeypadText</item>
+    <item name="colorPrimary">@color/energyPrimary</item>
+    <item name="colorPrimaryDark">@color/energyPrimaryDark</item>
+  </style>
+
+  <style name="DigitCell">
+    <item name="android:background">?selectableItemBackgroundBorderless</item>
+    <item name="android:textSize">@dimen/digit_button_text_size</item>
+    <item name="android:textColor">?keypadTextColor</item>
+
+    <item name="android:layout_width">0dip</item>
+    <item name="android:layout_weight">1</item>
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:gravity">center</item>
+  </style>
+
+  <!-- black 87% -->
+  <style name="Headline">
+    <item name="android:textSize">32sp</item>
+    <item name="android:fontFamily">regular</item>
+    <item name="android:textColor">#DE000000</item>
+  </style>
+
+  <!-- black 54% -->
+  <style name="Caption">
+    <item name="android:textSize">12sp</item>
+    <item name="android:fontFamily">regular</item>
+    <item name="android:textColor">#8A000000</item>
+  </style>
+
+  <style name="Body1">
+    <item name="android:textSize">14sp</item>
+    <item name="android:fontFamily">regular</item>
+    <item name="android:textColor">#DE000000</item>
+  </style>
+
+  <!-- white 87% -->
+  <style name="Body1.Inverse">
+    <item name="android:textColor">#DEFFFFFF</item>
+  </style>
+
+</resources>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+  <au.id.rlac.unitconverter.widget.AspectFrameLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        >
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:orientation="horizontal"
+          >
+
+        <Button
+            android:id="@+id/button_1"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_1"
+            />
+
+        <Button
+            android:id="@+id/button_2"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_2"
+            />
+
+        <Button
+            android:id="@+id/button_3"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_3"
+            />
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:orientation="horizontal"
+          >
+
+        <Button
+            android:id="@+id/button_4"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_4"
+            />
+
+        <Button
+            android:id="@+id/button_5"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_5"
+            />
+
+        <Button
+            android:id="@+id/button_6"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_6"
+            />
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:orientation="horizontal"
+          >
+
+        <Button
+            android:id="@+id/button_7"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_7"
+            />
+
+        <Button
+            android:id="@+id/button_8"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_8"
+            />
+
+        <Button
+            android:id="@+id/button_9"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_9"
+            />
+
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          android:layout_weight="1"
+          android:orientation="horizontal"
+          >
+
+        <Button
+            android:id="@+id/button_decimal"
+            style="?attr/digitCellStyle"
+            android:contentDescription="@string/key_dec_description"
+            />
+
+        <Button
+            android:id="@+id/button_0"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_0"
+            />
+
+        <Button
+            android:id="@+id/button_clr"
+            style="?attr/digitCellStyle"
+            android:text="@string/key_clr"
+            android:contentDescription="@string/key_clr_description"
+            />
+
+      </LinearLayout>
+
+    </LinearLayout>
+
+  </au.id.rlac.unitconverter.widget.AspectFrameLayout>
+
+</merge>
