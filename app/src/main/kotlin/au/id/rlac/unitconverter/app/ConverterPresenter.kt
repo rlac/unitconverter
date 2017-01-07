@@ -171,7 +171,7 @@ class ConverterPresenter : Presenter<ConverterPresenter.View>() {
     }
 
     companion object {
-      @JvmStatic val CREATOR = creator { UserInput(it.readBigDecimal(), it.readBoolean()) }
+      @JvmField val CREATOR = creator { UserInput(it.readBigDecimal(), it.readBoolean()) }
     }
   }
 }

@@ -80,7 +80,7 @@ fun Parcel.readNullableBoolean(): Boolean? =
  *   }
  *
  *   companion object {
- *     @JvmStatics val CREATOR = creator { MyParcelable(it.readString() }
+ *     @JvmField val CREATOR = creator { MyParcelable(it.readString() }
  *   }
  * }
  */
