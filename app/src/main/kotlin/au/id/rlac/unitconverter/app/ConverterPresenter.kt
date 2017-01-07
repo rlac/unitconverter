@@ -9,10 +9,6 @@ import au.id.rlac.unitconverter.converter.UnitConverter
 import au.id.rlac.util.android.*
 import nucleus.presenter.Presenter
 import java.math.BigDecimal
-import java.math.RoundingMode
-import kotlin.math.plus
-import kotlin.math.times
-import kotlin.platform.platformStatic
 import kotlin.properties.Delegates
 
 class ConverterPresenter : Presenter<ConverterPresenter.View>() {
@@ -36,7 +32,7 @@ class ConverterPresenter : Presenter<ConverterPresenter.View>() {
   public var unitConverter: UnitConverter
     get() = maybeUnitConverter ?: throw IllegalStateException()
     set(value) {
-      if (value equals maybeUnitConverter) {
+      if (value.equals(maybeUnitConverter)) {
         // do nothing
       } else {
         maybeUnitConverter = value
@@ -71,11 +67,11 @@ class ConverterPresenter : Presenter<ConverterPresenter.View>() {
 
   override fun onSave(state: Bundle) {
     super<Presenter>.onSave(state)
-    state.putInt(stateUnitConverter, unitConverter.ordinal())
+    state.putInt(stateUnitConverter, unitConverter.ordinal)
     state.putParcelable(stateInput, input)
-    state.putInt(stateTo, to.ordinal())
-    state.putInt(stateFrom, from.ordinal())
-    state.putInt(stateConvertFrom, convertFrom.ordinal())
+    state.putInt(stateTo, to.ordinal)
+    state.putInt(stateFrom, from.ordinal)
+    state.putInt(stateConvertFrom, convertFrom.ordinal)
   }
 
   override fun onTakeView(view: View) {
@@ -101,7 +97,7 @@ class ConverterPresenter : Presenter<ConverterPresenter.View>() {
 
   /** Update the 'To' measurement. */
   public fun changeTo(to: Measure) {
-    if (this.to equals to) return
+    if (this.to.equals(to)) return
     this.to = to
     Preferences.saveLastMeasure(unitConverter, to)
     calculateAndUpdateView()
@@ -109,7 +105,7 @@ class ConverterPresenter : Presenter<ConverterPresenter.View>() {
 
   /** Update the 'From' measurement. */
   public fun changeFrom(from: Measure) {
-    if (this.from equals from) return
+    if (this.from.equals(from)) return
     this.from = from
     Preferences.saveLastMeasure(unitConverter, from)
     calculateAndUpdateView()
@@ -175,7 +171,7 @@ class ConverterPresenter : Presenter<ConverterPresenter.View>() {
     }
 
     companion object {
-      platformStatic val CREATOR = creator { UserInput(it.readBigDecimal(), it.readBoolean()) }
+      @JvmStatic val CREATOR = creator { UserInput(it.readBigDecimal(), it.readBoolean()) }
     }
   }
 }

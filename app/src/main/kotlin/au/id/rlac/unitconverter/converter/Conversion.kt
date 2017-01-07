@@ -2,7 +2,6 @@ package au.id.rlac.unitconverter.converter
 
 import java.math.BigDecimal
 import java.math.RoundingMode
-import kotlin.properties.Delegates
 
 /**
  * Converts a single measure to and from another measure from a base unit of measure.
@@ -22,8 +21,8 @@ class Conversion private constructor(val targetMeasurement: Measure,
      * @param target The unit of measure that is converted to/from the base unit.
      * @param n The conversion ratio to and from the base unit.
      */
-    fun invoke(target: Measure, n: BigDecimal) =
-        if (n compareTo BigDecimal.ZERO == 0) throw IllegalArgumentException("Cannot map to 0")
+    operator fun invoke(target: Measure, n: BigDecimal) =
+        if (n.compareTo(BigDecimal.ZERO) == 0) throw IllegalArgumentException("Cannot map to 0")
         else Conversion(
             target,
             { y: BigDecimal -> y.divide(n, RoundingMode.HALF_EVEN) },
@@ -32,7 +31,7 @@ class Conversion private constructor(val targetMeasurement: Measure,
     /**
      * Converts fahrenheit to and from celsius.
      */
-    val fahrenheit: Conversion by Delegates.lazy {
+    val fahrenheit: Conversion by lazy {
       val nine = BigDecimal(9)
       val five = BigDecimal(5)
       val thirtyTwo = BigDecimal(32)

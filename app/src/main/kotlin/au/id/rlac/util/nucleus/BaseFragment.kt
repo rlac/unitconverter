@@ -14,7 +14,7 @@ public abstract class BaseFragment<ViewType, PresenterType : Presenter<ViewType>
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super<Fragment>.onCreate(savedInstanceState)
-    @suppress("UNCHECKED_CAST")
+    @Suppress("UNCHECKED_CAST")
     presenterHelper.create(this as ViewType, savedInstanceState)
   }
 

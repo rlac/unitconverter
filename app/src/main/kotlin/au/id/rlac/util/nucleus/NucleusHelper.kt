@@ -17,7 +17,7 @@ import nucleus.presenter.Presenter
  * @param factory Constructs a new presenter instance if one is not found in the manager.
  * @param manager Presenter instance manager.
  */
-public class NucleusHelper<ViewType : Any, PresenterType : Presenter<ViewType>>
+public class NucleusHelper<ViewType, PresenterType : Presenter<ViewType>>
 (private val manager: PresenterManager,
  private val factory: PresenterFactory<PresenterType>) {
 

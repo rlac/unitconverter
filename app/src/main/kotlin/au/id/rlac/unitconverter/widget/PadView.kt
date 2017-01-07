@@ -61,7 +61,7 @@ class PadView : FrameLayout {
 
   var padViewListener: PadViewListener? = null
 
-  val handleButtonClick = { v: View ->
+  val handleButtonClick = View.OnClickListener { v ->
     when (v.getId()) {
       R.id.button_clr -> padViewListener?.onClearClicked()
       R.id.button_decimal -> padViewListener?.onDecClicked()
@@ -71,7 +71,6 @@ class PadView : FrameLayout {
 
   init {
     LayoutInflater.from(getContext()).inflate(R.layout.view_pad, this, true)
-
     btn0.setOnClickListener(handleButtonClick); btn0.setTag(0)
     btn1.setOnClickListener(handleButtonClick); btn1.setTag(1)
     btn2.setOnClickListener(handleButtonClick); btn2.setTag(2)

@@ -9,7 +9,7 @@ import au.id.rlac.unitconverter.R
  * @property system Whether this is a US or a Metric unit.
  * @property weight Sort weighting (ascending). Sorting for matching weights is undefined.
  */
-public enum class Measure(val displayStringId: Int, val system: MeasurementSystem, val weight: Int) {
+enum class Measure(val displayStringId: Int, val system: MeasurementSystem, val weight: Int) {
   // temperature
   CELSIUS(R.string.celsius, MeasurementSystem.METRIC, 0),
   FAHRENHEIT(R.string.fahrenheit, MeasurementSystem.US, 0),

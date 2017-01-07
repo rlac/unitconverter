@@ -1,6 +1,7 @@
 package au.id.rlac.unitconverter.widget
 
 import android.R
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -27,7 +28,7 @@ class BindableSpinnerAdapter<T>(context: Context,
 
   val inflater = LayoutInflater.from(context)
 
-  override fun getCount(): Int = items.size()
+  override fun getCount(): Int = items.size
 
   override fun getItem(position: Int): Any? = items[position]
 

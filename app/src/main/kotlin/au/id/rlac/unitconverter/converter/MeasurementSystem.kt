@@ -7,5 +7,5 @@ enum class MeasurementSystem {
   US,
   METRIC;
 
-  fun opposite() = if (this equals US) METRIC else US
+  fun opposite() = if (this.equals(US)) METRIC else US
 }

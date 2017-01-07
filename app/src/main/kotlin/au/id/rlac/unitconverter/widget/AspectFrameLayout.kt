@@ -2,9 +2,7 @@ package au.id.rlac.unitconverter.widget
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.View.MeasureSpec
 import android.widget.FrameLayout
-import kotlin.platform.platformStatic
 
 /**
  * FrameLayout that sets its width or height to best fit while maintaining an aspect ratio.

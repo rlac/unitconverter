@@ -14,33 +14,27 @@ import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.TextView
 import au.id.rlac.unitconverter.R
-import au.id.rlac.util.nucleus.BaseFragment
 import au.id.rlac.unitconverter.converter.Measure
 import au.id.rlac.unitconverter.converter.UnitConverter
 import au.id.rlac.unitconverter.widget.BindableSpinnerAdapter
 import au.id.rlac.unitconverter.widget.PadView
 import au.id.rlac.util.android.delegates.ViewDelegates
-import au.id.rlac.util.android.delegates.argument
-import au.id.rlac.util.android.delegates.viewById
 import au.id.rlac.util.android.isLollipop
+import au.id.rlac.util.nucleus.BaseFragment
 import java.math.BigDecimal
-import java.math.RoundingMode
 import java.text.DecimalFormat
 import java.text.NumberFormat
-import kotlin.InlineOption.ONLY_LOCAL_RETURN
 import nucleus.factory.RequiresPresenter as requiresPresenter
 
-requiresPresenter(ConverterPresenter::class)
+@nucleus.factory.RequiresPresenter(ConverterPresenter::class)
 class ConverterFragment : BaseFragment<ConverterPresenter.View, ConverterPresenter>(), ConverterPresenter.View {
 
   companion object {
-    fun invoke(uc: UnitConverter): ConverterFragment {
+    operator fun invoke(uc: UnitConverter): ConverterFragment {
       val fragment = ConverterFragment()
       val args = Bundle()
       fragment.setArguments(args)
-
-      args.putInt("unitConverter", uc.ordinal())
-
+      args.putInt("unitConverter", uc.ordinal)
       return fragment
     }
   }
@@ -59,9 +53,9 @@ class ConverterFragment : BaseFragment<ConverterPresenter.View, ConverterPresent
   }
 
   // unit converter set for the fragment as an argument
-  val unitConverter: UnitConverter by argument(map = { ucOrdinal: Int ->
-    UnitConverter.values()[ucOrdinal]
-  })
+  val unitConverter: UnitConverter by lazy {
+    UnitConverter.values()[(arguments.getInt("unitConverter"))]
+  }
 
   class ViewReference(override val view: View) : ViewDelegates.ViewHolder {
     val padView: PadView by viewById(R.id.padview)
@@ -170,7 +164,7 @@ class ConverterFragment : BaseFragment<ConverterPresenter.View, ConverterPresent
       val bind = fun(m: Measure, tv: TextView) {
         tv.setText(m.displayStringId)
       }
-      val id = fun(m: Measure): Long = m.ordinal().toLong()
+      val id = fun(m: Measure): Long = m.ordinal.toLong()
 
       fromSpinner.setAdapter(BindableSpinnerAdapter(
           context = getActivity(), bind = bind, getId = id, items = from))
@@ -191,7 +185,7 @@ class ConverterFragment : BaseFragment<ConverterPresenter.View, ConverterPresent
    *
    * @param complete function that is invoked when the reveal animation has completed.
    */
-  private inline fun overlayReveal(inlineOptions(ONLY_LOCAL_RETURN) complete: () -> Unit) {
+  private inline fun overlayReveal(crossinline complete: () -> Unit) {
     if (!isLollipop) {
       complete()
 

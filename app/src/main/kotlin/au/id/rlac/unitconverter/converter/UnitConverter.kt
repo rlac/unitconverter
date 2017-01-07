@@ -18,10 +18,10 @@ import java.util.*
  * @param converters Converters that convert to the [base]. Each [Conversion] is adds its [Measure]
  * as a supported type to this unit converter.
  */
-public enum class UnitConverter(private val base: Measure,
-                                val displayNameResId: Int,
-                                val theme: Int,
-                                vararg converters: Conversion) {
+enum class UnitConverter(private val base: Measure,
+                         val displayNameResId: Int,
+                         val theme: Int,
+                         vararg converters: Conversion) {
 
   TEMPERATURE(
       Measure.CELSIUS,
@@ -65,16 +65,15 @@ public enum class UnitConverter(private val base: Measure,
       R.style.EnergyTheme,
       Conversion(Measure.KILOCALORIE, BigDecimal(4.184)));
 
-  public class Theme private constructor(val colorPrimary: Int, val colorPrimaryDark: Int) {
+  class Theme private constructor(val colorPrimary: Int, val colorPrimaryDark: Int) {
     companion object {
-      fun invoke(context: Context, uc: UnitConverter): Theme {
+      operator fun invoke(context: Context, uc: UnitConverter): Theme {
         with(context.getResources().newTheme()) {
           setTo(context.getTheme())
           applyStyle(uc.theme, true)
-
-          return obtainStyledAttributes(R.styleable.Theme) use {
-            Theme(it.getColor(R.styleable.Theme_colorPrimary, 0),
-                it.getColor(R.styleable.Theme_colorPrimaryDark, 0))
+          return obtainStyledAttributes(R.styleable.AppCompatTheme).use {
+            Theme(it.getColor(R.styleable.AppCompatTheme_colorPrimary, 0),
+                it.getColor(R.styleable.AppCompatTheme_colorPrimaryDark, 0))
           }
         }
       }
@@ -83,7 +82,7 @@ public enum class UnitConverter(private val base: Measure,
 
   private val converterMap: Map<Measure, Conversion> = Collections.unmodifiableMap(
       with(HashMap<Measure, Conversion>()) {
-        converters forEach { c -> put(c.targetMeasurement, c) }
+        converters.forEach { c -> put(c.targetMeasurement, c) }
         put(base, Conversion(base, BigDecimal.ONE))
         this
       })
@@ -92,10 +91,10 @@ public enum class UnitConverter(private val base: Measure,
    * @param forSystem If set filters the list to measurements for this system only.
    * @return the list of units supported by this converter's convert method.
    */
-  public fun supportedUnits(forSystem: MeasurementSystem? = null): List<Measure> =
-      with(converterMap map { it.key } sortBy { it.weight }) {
+  fun supportedUnits(forSystem: MeasurementSystem? = null): List<Measure> =
+      with(converterMap.map({ it.key }).sortedBy { it.weight }) {
         if (forSystem == null) this
-        else filter { it.system equals forSystem }
+        else filter { it.system == forSystem }
       }
 
   /**
@@ -107,13 +106,13 @@ public enum class UnitConverter(private val base: Measure,
    * @return the converted value.
    * @throws IllegalArgumentException if the from or to unit is not supported by the converter.
    */
-  public fun convert(from: Measure, to: Measure, value: BigDecimal): BigDecimal {
+  fun convert(from: Measure, to: Measure, value: BigDecimal): BigDecimal {
     val fromConverter = converterMap[from]
     val toConverter = converterMap[to]
 
     if (fromConverter == null) throw IllegalArgumentException("from unit ${from} not supported.")
     if (toConverter == null) throw IllegalArgumentException("to unit ${to} not supported.")
 
-    return toConverter fromBase (fromConverter toBase value)
+    return toConverter.fromBase(fromConverter.toBase(value))
   }
 }
