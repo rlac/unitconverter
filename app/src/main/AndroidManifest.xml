@@ -18,6 +18,7 @@
         <action android:name="android.intent.action.MAIN"/>
         <category android:name="android.intent.category.LAUNCHER"/>
       </intent-filter>
+      <layout android:minHeight="240dp"/>
     </activity>
 
   </application>

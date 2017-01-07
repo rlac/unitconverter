@@ -7,65 +7,73 @@
     android:orientation="horizontal"
     >
 
-  <LinearLayout
-      android:id="@+id/layout_display"
-      android:layout_width="0dip"
+  <ScrollView
+      android:layout_width="0dp"
       android:layout_height="match_parent"
       android:layout_weight="8"
-      android:background="@android:color/white"
+      android:fillViewport="true"
       android:elevation="@dimen/output_elevation"
-      android:gravity="center_vertical"
-      android:orientation="vertical"
-      android:paddingRight="@dimen/horizontal_margin"
-      android:paddingLeft="@dimen/horizontal_margin"
-      tools:ignore="RtlHardcoded,UnusedAttribute"
+      android:background="@android:color/white"
       >
 
-    <Spinner
-        android:id="@+id/spinner_from_unit"
-        android:layout_width="144dip"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:labelFor="@+id/text_from_qty"
-        />
-
-    <me.grantland.widget.AutofitTextView
-        android:id="@+id/text_from_qty"
-        style="@style/Headline"
+    <LinearLayout
+        android:id="@+id/layout_display"
         android:layout_width="match_parent"
-        android:layout_height="36sp"
-        android:ellipsize="end"
-        android:freezesText="false"
-        android:gravity="end|bottom"
-        android:singleLine="true"
-        app:minTextSize="8sp"
-        tools:text="2.69"
-        />
-
-    <include layout="@layout/layout_switch"/>
-
-    <Spinner
-        android:id="@+id/spinner_to_unit"
-        android:layout_width="144dip"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:labelFor="@+id/text_to_qty"
-        />
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingRight="@dimen/horizontal_margin"
+        android:paddingLeft="@dimen/horizontal_margin"
+        tools:ignore="RtlHardcoded,UnusedAttribute"
+        >
 
-    <me.grantland.widget.AutofitTextView
-        android:id="@+id/text_to_qty"
-        style="@style/Headline"
-        android:layout_width="match_parent"
-        android:layout_height="36sp"
-        android:ellipsize="end"
-        android:freezesText="false"
-        android:gravity="end|bottom"
-        android:singleLine="true"
-        app:minTextSize="8sp"
-        tools:text="23.4"
-        />
+      <Spinner
+          android:id="@+id/spinner_from_unit"
+          android:layout_width="144dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:labelFor="@+id/text_from_qty"
+          />
 
-  </LinearLayout>
+      <me.grantland.widget.AutofitTextView
+          android:id="@+id/text_from_qty"
+          style="@style/Headline"
+          android:layout_width="match_parent"
+          android:layout_height="36sp"
+          android:ellipsize="end"
+          android:freezesText="false"
+          android:gravity="end|bottom"
+          android:singleLine="true"
+          app:minTextSize="8sp"
+          tools:text="2.69"
+          />
+
+      <include layout="@layout/layout_switch"/>
+
+      <Spinner
+          android:id="@+id/spinner_to_unit"
+          android:layout_width="144dip"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_horizontal"
+          android:labelFor="@+id/text_to_qty"
+          />
+
+      <me.grantland.widget.AutofitTextView
+          android:id="@+id/text_to_qty"
+          style="@style/Headline"
+          android:layout_width="match_parent"
+          android:layout_height="36sp"
+          android:ellipsize="end"
+          android:freezesText="false"
+          android:gravity="end|bottom"
+          android:singleLine="true"
+          app:minTextSize="8sp"
+          tools:text="23.4"
+          />
+
+    </LinearLayout>
+
+  </ScrollView>
 
   <au.id.rlac.unitconverter.widget.PadView
       android:id="@+id/padview"
