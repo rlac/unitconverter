@@ -33,7 +33,7 @@
           android:layout_height="wrap_content"
           android:labelFor="@+id/text_from_qty"
           android:layout_alignParentBottom="true"
-          android:paddingBottom="4dp"
+          android:layout_marginBottom="4dp"
           />
 
       <me.grantland.widget.AutofitTextView
@@ -41,13 +41,13 @@
           style="@style/Headline"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_alignParentRight="true"
-          android:layout_alignBaseline="@id/spinner_from_unit"
+          android:layout_centerVertical="true"
           android:layout_toRightOf="@id/spinner_from_unit"
           android:ellipsize="end"
           android:freezesText="false"
           android:gravity="end"
-          android:singleLine="true"
+          android:maxLines="1"
+          android:textIsSelectable="true"
           app:minTextSize="8sp"
           tools:text="2.69"
           tools:ignore="RtlHardcoded"
@@ -69,7 +69,7 @@
           android:layout_height="wrap_content"
           android:labelFor="@+id/text_to_qty"
           android:layout_alignParentBottom="true"
-          android:paddingBottom="4dp"
+          android:layout_marginBottom="4dp"
           />
 
       <me.grantland.widget.AutofitTextView
@@ -78,13 +78,13 @@
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:layout_alignParentRight="true"
-          android:layout_alignParentBottom="true"
-          android:layout_alignBaseline="@id/spinner_to_unit"
+          android:layout_centerVertical="true"
           android:layout_toRightOf="@id/spinner_to_unit"
           android:ellipsize="end"
           android:freezesText="false"
           android:gravity="end"
-          android:singleLine="true"
+          android:maxLines="1"
+          android:textIsSelectable="true"
           app:minTextSize="8sp"
           tools:text="2.69"
           tools:ignore="RtlHardcoded"

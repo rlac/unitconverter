@@ -43,7 +43,8 @@
           android:ellipsize="end"
           android:freezesText="false"
           android:gravity="end|bottom"
-          android:singleLine="true"
+          android:maxLines="1"
+          android:textIsSelectable="true"
           app:minTextSize="8sp"
           tools:text="2.69"
           />
@@ -66,7 +67,8 @@
           android:ellipsize="end"
           android:freezesText="false"
           android:gravity="end|bottom"
-          android:singleLine="true"
+          android:maxLines="1"
+          android:textIsSelectable="true"
           app:minTextSize="8sp"
           tools:text="23.4"
           />
